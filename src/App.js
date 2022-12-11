@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NavBar from "./NavBar";
+import Hero from "./Hero";
+import { Grid } from "@mui/material";
+import PropertyCard from "./PropertyCard";
+import propertyData from "./propertyData";
+import Footer from "./Footer";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme(
+  {
+    palette: {
+      primary: {
+        main: '#9E7676'
+      }
+    }
+  }
+)
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <NavBar/>
+      <Hero/>
+      <Grid container justifyContent="center">
+        {propertyData.map(e => {
+          return <Grid item md={3}><PropertyCard title={e.title} price={e.price} description={e.description} img={e.img}/></Grid>
+        })}
+      </Grid>
+      <Footer/>
+    </ThemeProvider>
   );
 }
 

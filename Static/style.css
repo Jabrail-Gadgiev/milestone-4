@@ -1,0 +1,103 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #FFF8EA;
+  color: #594545;
+}
+
+.navbar {
+  background-color: #9E7676;
+}
+
+.offcanvas-body {
+  background-color: #FFF8EA;
+}
+
+.offcanvas-header {
+  background-color: #9E7676;
+}
+
+.btn {
+  background-color: #9E7676;
+}
+
+.btn:hover {
+  background-color: #815B5B;
+  color: black;
+}
+
+.logo {
+  color: #594545;
+  font-size: 30px;
+  font-weight: 600;
+  justify-content: left;
+  padding: 0 0 0 15px;
+}
+
+.column {
+  margin: 10px;
+}
+
+.column .btn {
+  margin-top: -5px;
+}
+
+.column img {
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.column img:hover {
+  box-shadow: #9E7676 0px 1px 4px, #9E7676 0px 0px 0px 3px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.column-container {
+  margin: 0 50px 0 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.column p {
+  margin-top: 5px;
+}
+
+.searchbar {
+  background-color: #815B5B;
+}
+
+.heroHeader {
+  color: #594545;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.heroText {
+  color: #746767;
+  margin-top: 10rem;
+}
+
+.heroImage {
+  margin-top: 5rem;
+}
+
+.heroBtn {
+  font-size: 1.2rem;
+}
+
+.btn-secondary {
+  border-color: #815B5B;
+  color: #815B5B;
+  background-color: #FFF8EA;
+}
+
+.btn-secondary:hover {
+  color: #815B5B;
+  background-color: #FFF8EA;
+}
+
+.container {
+  height: 100vh;
+}
