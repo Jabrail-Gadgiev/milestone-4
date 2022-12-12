@@ -5,6 +5,10 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import AddHomeIcon from '@mui/icons-material/AddHome';
 import { ContentCut } from '@mui/icons-material';
+import {Link as ReactLink} from 'react-router-dom';
+
+const pages = ['Sign Up', 'Login'];
+const pagesPaths = ['/signup', '/login'];
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,12 +41,28 @@ export default function BasicMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose} sx={{backgroundColor:'#FFF8EA'}}>
+        {pages.map((page, i) => {
+          return (<MenuItem 
+          component={ReactLink}
+          key={page}
+          to={pagesPaths[i]}
+          onClick={handleClose} 
+          sx={{backgroundColor:'#FFF8EA'}}
+          >
             <AddHomeIcon sx={{color: '#594545', mr:1}}>
                 <ContentCut fontSize="small" />
             </AddHomeIcon>
             <ListItemText sx={{color: '#594545'}}>
-                Sign In
+                {page}
+            </ListItemText>
+          </MenuItem>)
+        })}
+        {/* <MenuItem onClick={handleClose} sx={{backgroundColor:'#FFF8EA'}}>
+            <AddHomeIcon sx={{color: '#594545', mr:1}}>
+                <ContentCut fontSize="small" />
+            </AddHomeIcon>
+            <ListItemText sx={{color: '#594545'}}>
+                Sign Up
             </ListItemText>
         </MenuItem>
         <MenuItem onClick={handleClose} sx={{backgroundColor:'#FFF8EA'}}>
@@ -60,7 +80,7 @@ export default function BasicMenu() {
             <ListItemText sx={{color: '#594545'}}>
                 Ready to Host?
             </ListItemText>
-        </MenuItem>
+        </MenuItem> */}
       </Menu>
     </div>
   );
